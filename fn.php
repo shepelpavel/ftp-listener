@@ -36,29 +36,30 @@ function xmlToArray($xml, $options = array())
         foreach ($xml->children($namespace) as $childXml) {
             //recurse into child nodes
             $childArray = xmlToArray($childXml, $options);
-            list($childTagName, $childProperties) = each($childArray);
 
-            //replace characters in tag name
-            if ($options['keySearch']) $childTagName =
-                str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
-            //add namespace prefix, if any
-            if ($prefix) $childTagName = $prefix . $options['namespaceSeparator'] . $childTagName;
+            foreach ($childArray as $childTagName => $childProperties) {
+                //replace characters in tag name
+                if ($options['keySearch']) $childTagName =
+                    str_replace($options['keySearch'], $options['keyReplace'], $childTagName);
+                //add namespace prefix, if any
+                if ($prefix) $childTagName = $prefix . $options['namespaceSeparator'] . $childTagName;
 
-            if (!isset($tagsArray[$childTagName])) {
-                //only entry with this key
-                //test if tags of this type should always be arrays, no matter the element count
-                $tagsArray[$childTagName] =
-                    in_array($childTagName, $options['alwaysArray']) || !$options['autoArray']
-                    ? array($childProperties) : $childProperties;
-            } elseif (
-                is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName])
-                === range(0, count($tagsArray[$childTagName]) - 1)
-            ) {
-                //key already exists and is integer indexed array
-                $tagsArray[$childTagName][] = $childProperties;
-            } else {
-                //key exists so convert to integer indexed array with previous value in position 0
-                $tagsArray[$childTagName] = array($tagsArray[$childTagName], $childProperties);
+                if (!isset($tagsArray[$childTagName])) {
+                    //only entry with this key
+                    //test if tags of this type should always be arrays, no matter the element count
+                    $tagsArray[$childTagName] =
+                        in_array($childTagName, $options['alwaysArray']) || !$options['autoArray']
+                        ? array($childProperties) : $childProperties;
+                } elseif (
+                    is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName])
+                    === range(0, count($tagsArray[$childTagName]) - 1)
+                ) {
+                    //key already exists and is integer indexed array
+                    $tagsArray[$childTagName][] = $childProperties;
+                } else {
+                    //key exists so convert to integer indexed array with previous value in position 0
+                    $tagsArray[$childTagName] = array($tagsArray[$childTagName], $childProperties);
+                }
             }
         }
     }
