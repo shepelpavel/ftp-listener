@@ -29,6 +29,7 @@ foreach ($arrayData['FileZilla3']['Servers']['Folder'] as $key => $value) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTP Listener</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
