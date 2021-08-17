@@ -20,7 +20,8 @@
         "build": "gulp build && electron-builder --linux --win"
     },
     "dependencies": {
-        "electron-find": "^1.0.7"
+        "electron-find": "^1.0.7",
+        "xml-js": "^1.6.11"
     },
     "devDependencies": {
         "electron": "^13.1.4",
@@ -35,13 +36,11 @@
         "gulp-sass": "^4.1.0",
         "gulp-svg-sprite": "^1.5.0",
         "gulp-svgmin": "^3.0.0",
-        "gulp-util": "^3.0.8",
-        "xml-js": "^1.6.11",
-        "xmldoc": "^1.1.2"
+        "gulp-util": "^3.0.8"
     },
     "build": {
-        "productName": "app",
-        "appId": "app",
+        "productName": "FTP-Listener",
+        "appId": "ftp-listener",
         "linux": {
             "synopsis": "FTP-Listener",
             "description": "ftp-listener",
