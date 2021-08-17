@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>app</title>
+    <link rel="stylesheet" href="./../_assets/css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="folder" v-for="folder in list">
+            <h2>{{folder.folder}}</h2>
+            <div class="sites">
+                <textarea class="site" v-for="site in folder.sites" @click="copySite" readonly="readonly" rows="4">Name  - {{site.name._text}}
+Host  - {{site.host._text}}:{{site.port._text}}
+Login - {{site.login._text}}
+Pass  - {{site.pass._text}}</textarea>
+            </div>
+        </div>
+    </div>
+    <div id="copy" class="copy" :class="active">
+        Copied!
+    </div>
+</body>
+
+<div style="display: none;">
+    <img src="./../_assets/svg/sprite.svg">
+</div>
+
+<script src="./../_assets/js/bundle.min.js"></script>
+
+</html>

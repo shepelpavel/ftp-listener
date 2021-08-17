@@ -1,0 +1,86 @@
+::-webkit-scrollbar,
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+    opacity: 0;
+}
+
+::-webkit-resizer {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(126, 126, 126, 0.6)
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(126, 126, 126, 0.8);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: monospace, sans-serif;
+}
+
+html {
+    font-family: monospace, sans-serif;
+    background-color: rgba(var(--color_dark), 1);
+    color: rgba(var(--color_light), 1);
+}
+
+.folder {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    h2 {
+        font-size: 16px;
+        line-height: 16px;
+        text-decoration: underline;
+    }
+
+    .sites {
+        display: flex;
+        flex-direction: column;
+
+        .site {
+            display: flex;
+            flex-direction: column;
+            margin: 6px 0 0;
+            padding: 6px;
+            background: #00000030;
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 16px;
+            resize: none;
+            color: #cccccc;
+            border: 1px solid transparent;
+            transition: .3s;
+
+            &:hover {
+                border: 1px solid #FFFFFF20;
+            }
+        }
+    }
+}
+
+.copy {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(200%);
+    background: #666666;
+    padding: 16px 30px;
+    font-size: 16px;
+    line-height: 16px;
+    transition: .3s;
+
+    &.active {
+        transform: translateX(-50%);
+    }
+}
