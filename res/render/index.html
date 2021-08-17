@@ -15,7 +15,7 @@
                 <textarea class="site" v-for="site in folder.sites" @click="copySite" readonly="readonly" rows="4">Name  - {{site.name._text}}
 Host  - {{site.host._text}}:{{site.port._text}}
 Login - {{site.login._text}}
-Pass  - {{site.pass._text}}</textarea>
+Pass  - {{atob(site.pass._text)}}</textarea>
             </div>
         </div>
     </div>
