@@ -3,7 +3,7 @@
     "executableName": "ftp-listener",
     "productName": "FTP-Listener",
     "description": "ftp-listener",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "author": {
         "name": "Shepel Pavel",
