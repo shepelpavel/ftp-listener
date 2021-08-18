@@ -7,9 +7,7 @@ const {
 const os = require('os')
 const path = require('path')
 const fs = require('fs')
-const exec = require('child_process').exec
 const convert = require('xml-js')
-const username = os.userInfo().username
 
 var sitemanager = app.getPath('appData') + '\\FileZilla\\sitemanager.xml'
 if (os.platform() == 'linux') {

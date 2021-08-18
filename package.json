@@ -3,7 +3,7 @@
     "executableName": "ftp-listener",
     "productName": "FTP-Listener",
     "description": "ftp-listener",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "MIT",
     "author": {
         "name": "Shepel Pavel",
@@ -12,7 +12,9 @@
     },
     "repository": "https://github.com/shepelpavel/ftp-listener",
     "keywords": [
-        "app"
+        "ftp-listener",
+        "FTP",
+        "listener"
     ],
     "main": "main.js",
     "scripts": {
