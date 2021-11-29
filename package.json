@@ -19,7 +19,7 @@
     "main": "main.js",
     "scripts": {
         "dev": "gulp build && electron .",
-        "build": "gulp build && electron-builder --linux --win"
+        "build": "gulp build && electron-builder --win"
     },
     "dependencies": {
         "electron-find": "^1.0.7",
@@ -54,7 +54,7 @@
         },
         "win": {
             "icon": "./res/icons/icon256.png",
-            "target": "portable"
+            "target": "nsis"
         }
     }
 }
